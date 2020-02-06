@@ -42,4 +42,14 @@ class Lecturer extends Model
         return 'img/default-user.png';
     }
 
+    // public function classlecturer()
+    // {
+    //     return $this->hasMany(Classlecturer::class);
+    // }
+
+    public function classroom()
+    {
+        return $this->belongsToMany(Classroom::class,'class_lecturers','lecturer_id','classroom_id');
+    }
+
 }

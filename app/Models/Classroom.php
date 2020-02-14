@@ -27,4 +27,9 @@ class Classroom extends Model
     {
         return $this->belongsTo(Semester::class);
     }
+
+    public function lecturertes()
+    {
+        return $this->belongsToMany(Lecturer::class,'class_lecturers','classroom_id','lecturer_id');
+    }
 }

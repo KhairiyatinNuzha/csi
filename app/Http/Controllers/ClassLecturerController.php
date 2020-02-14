@@ -22,6 +22,7 @@ class ClassLecturerController extends Controller
         //         ->get();
 
         $datas = Lecturer::all();
+        // dd($datas);
         return view('kelas_dosen.index',compact('datas'));
     }
     public function tambah()

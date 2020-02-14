@@ -19,15 +19,15 @@ class ClassController extends Controller
     public function index()
     {
     	// $data = ClassLecturer::wh();
-    	// $datas = ClassLecturer::select(DB::raw('class_lecturers.*,lecturers.name as dosen, semesters.*,classrooms.*,courses.*'))
-    	// 		->leftjoin('classrooms','class_lecturers.classroom_id','classrooms.id')
-    	// 		->leftjoin('lecturers','class_lecturers.lecturer_id','lecturers.id')
-    	// 		->leftjoin('semesters','classrooms.semester_id','semesters.id')
-    	// 		->leftjoin('courses','classrooms.course_id','courses.id')
-    	// 		// ->where('semesters.year','=','year(CURRENT_TIMESTAMP)')
+    	// $datas = Classroom::select('classrooms.id as idc', 'classrooms.*', 'lecturers.name as dosen', 'semesters.*', 'courses.*')
+     //            ->rightjoin('class_lecturers','classrooms.id','class_lecturers.classroom_id')
+    	// 		->rightjoin('lecturers','class_lecturers.lecturer_id','lecturers.id')
+     //            ->leftjoin('semesters','classrooms.semester_id','semesters.id')
+     //            ->leftjoin('courses','classrooms.course_id','courses.id')
     	// 		->get();
     			// dd($datas);
         $datas = Classroom::all();
+        // dd($datas);
 
     	// $datas = Classroom::all();
 

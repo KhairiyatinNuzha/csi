@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('toolbar')
+    {!! cui_toolbar_btn(route('kelaslecturer.tambah'), 'icon-plus', 'Tambah Dosen') !!}
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
@@ -7,7 +11,6 @@
             <div class="card">
                 <div class="card-header">
                     <h2 align="center">Data Matkul</h2>                        
-                    <a href="{{ route('kelaslecturer.tambah') }}" class="btn btn-primary btn-lg btn-block">Tambah dosen matkul</a>
                 </div>
 
                 <div class="card-body">
@@ -19,7 +22,7 @@
                         @foreach($datas as $data)
                         <tr>
                             <td> {{ $data->name }} </td>
-                            <td>
+                            <td> 
                                 @foreach($data->classroom as $classroom)
                                 <li>{{ $classroom->name }}</li>
                                 @endforeach

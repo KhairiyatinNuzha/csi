@@ -46,4 +46,5 @@ class ClassLecturerController extends Controller
     {
         return view('kelas_dosen.detail');
     }
+
 }

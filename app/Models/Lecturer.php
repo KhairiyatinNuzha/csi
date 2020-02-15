@@ -42,14 +42,16 @@ class Lecturer extends Model
         return 'img/default-user.png';
     }
 
-    // public function classlecturer()
-    // {
-    //     return $this->hasMany(Classlecturer::class);
-    // }
 
-    public function classroom()
+    public function thesisTrial()
     {
-        return $this->belongsToMany(Classroom::class,'class_lecturers','lecturer_id','classroom_id');
+        return $this->belongsToMany(ThesisTrial::class, 'thesis_examiners', 'lecturer_id', 'thesis_trial_id');
+    }
+
+
+    public function thesis()
+    {
+        return $this->belongsToMany(Thesis::class, 'thesis_supervisors', 'lecturer_id', 'thesis_id');
     }
 
 }
